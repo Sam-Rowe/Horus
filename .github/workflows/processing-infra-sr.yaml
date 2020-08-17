@@ -1,0 +1,30 @@
+on: [workflow_dispatch]
+ 
+name: Processing Infrastructure
+env:
+  APPLICATION_NAME: horus
+  LOCATION: uksouth  
+  SUPPRESS_CONFIRM: True
+  TEAM_NAME: Unity
+  BUILD_INSPECTION_INFRASTRUCTURE:  True
+  SCORES_APPLICATION_NAME: horus-scores
+  SCORES_DB_PASSWORD: ${{secrets.SCORES_DB_PASSWORD}}
+  SQL_ALLOW_MY_IP: 92.238.162.45
+  PERSISTENCE_ENGINE_TYPE: Engines.SqlPersistenceEngine 
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+   
+      - name: Run Deployment Scripts
+        run: |
+                chmod +x Horus.Functions/Infrastructure/create_infra.sh
+                Horus.Functions/Infrastructure/create_infra.sh
