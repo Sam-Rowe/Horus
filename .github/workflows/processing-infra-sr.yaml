@@ -1,15 +1,15 @@
 on: [workflow_dispatch]
  
-name: Processing Infrastructure
+name: Processing Infrastructure - SR
 env:
-  APPLICATION_NAME: horus
+  APPLICATION_NAME: srhorus
   LOCATION: uksouth  
   SUPPRESS_CONFIRM: True
-  TEAM_NAME: Unity
+  TEAM_NAME: Epic
   BUILD_INSPECTION_INFRASTRUCTURE:  True
   SCORES_APPLICATION_NAME: horus-scores
   SCORES_DB_PASSWORD: ${{secrets.SCORES_DB_PASSWORD}}
-  SQL_ALLOW_MY_IP: 92.238.162.45
+  SQL_ALLOW_MY_IP: 51.11.146.63
   PERSISTENCE_ENGINE_TYPE: Engines.SqlPersistenceEngine 
 
 jobs:
