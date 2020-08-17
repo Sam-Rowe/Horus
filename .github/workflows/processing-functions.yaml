@@ -1,4 +1,4 @@
-name: Processing Functions
+name: Processing Functions - SRTest
 env:
    LOCATION: uksouth
    APPLICATION_NAME: horus
