@@ -1,6 +1,6 @@
 on: [workflow_dispatch]
  
-name: Processing Infrastructure
+name: Processing Infrastructure -SRtest
 env:
   APPLICATION_NAME: horus
   LOCATION: uksouth  
